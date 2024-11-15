@@ -1,0 +1,35 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import '../styles/custom.css';
+import '../styles/vendors/menu.css';
+
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} - Azzle AI Technology & Startup</title>
+    <meta name="description" content="AIMass Tailwind based SASS Template" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/img/favicon.png" />
+  </head>
+  <body>
+    <div class="page-wrapper relative z-[1] bg-white">
+      <Header />
+      
+      <slot />
+      
+      <Footer />
+      <script is:inline src="../js/main.js"></script>
+    </div>
+  </body>
+</html>
